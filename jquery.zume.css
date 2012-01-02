@@ -1,0 +1,30 @@
+div.zume{
+	position: relative !important;
+}
+
+div.zume-zoom{
+	position: absolute;
+	left: -10000em; top: 0;
+	margin: 0 0 0 10px;
+	overflow: hidden;
+	display: none;
+
+	border: 1px solid #ccc;
+}
+
+div.zume-zoom img{
+	position: absolute;
+	left: 0; top: 0;
+}
+
+div.zume-magnifier{
+	position: absolute;
+	left: -10000em; top: 0;
+	display: none;
+
+	border: 1px solid #ccc;
+
+	background-color: white;
+	background-color: rgba(255,255,255,0.7);
+	filter: alpha(opacity=70);
+}
