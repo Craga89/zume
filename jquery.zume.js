@@ -25,7 +25,7 @@
 
 				// Create magnifier
 				elements.mag = $('<div/>', {
-					'class': 'zoomit-magnifier',
+					'class': 'zume-magnifier',
 					'css': {
 						'width': cache.width * cache.ratio,
 						'height': cache.height * cache.ratio
@@ -35,7 +35,7 @@
 
 				// Create zoom element
 				elements.zoom = $('<div/>', {
-					'class': 'zoomit-zoom',
+					'class': 'zume-zoom',
 					'css': {
 						'width': cache.width,
 						'height': cache.height
