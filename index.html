@@ -3,22 +3,56 @@
 <head>
 <meta charset="utf-8">
 <title>Zume - jQuery zoom plugin</title>
-<link rel="stylesheet" href="jquery.zoomit.css">
+<link rel="stylesheet" href="jquery.zume.css">
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-<body>
+<style>
+#zoom{
+	float: left;
+	text-align: center;
+}
 
-<div id="gallery" style="float: left;">
-	<img src="http://noupe.com/img/wallpaper-3.jpg" width="265" />
+#thumbs{
+	clear: left;
+}
+
+#thumbs img{
+	display: inline;
+	margin: 10px 5px 30px;
+
+	vertical-align: middle;
+	cursor: pointer;
+}
+</style>
+<body>
+<h1>Zume - jQuery zoom plugin</h1>
+
+<div id="zoom">
+	<img src="images/owl1.jpg" height="200" />
 </div>
-Image courtesy of <a href="http://noupe.com"></a>.
+
+<div id="thumbs">
+	<img src="images/owl1-thumb.jpg" rel="images/owl1.jpg" title="Photo by Wikimedia Commons user Trebol-a" />
+	<img src="images/owl2-thumb.jpg" rel="images/owl2.jpg" title="Photo by Flickr user dariosanches" />
+	<img src="images/owl3-thumb.jpg" rel="images/owl3.jpg" title="Photo by Flickr user kasia" />
+</div>
+
+Mouse over the large image above, or choose from the thmbnails below to change the main photo.
 
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="jquery.zume.js"></script>
 <script>
-$('#gallery').zume();
+// Setup the zoom image using default settings
+$('#zoom').zume();
+
+// Setup thumbs
+$('#thumbs img').click(function() {
+	var bigsrc = $(this).attr('rel');
+
+	$('#zoom').data('zume').update(bigsrc);
+});
 </script>
 </body>
 </html>
